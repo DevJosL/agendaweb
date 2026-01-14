@@ -1,4 +1,5 @@
 import { ItemContacto } from "../../common/itemContacto/ItemContacto.js";
+import { ContactList } from "../contactos/db.js";
 
 let Contactos = () => {
     let sectionContactos = document.createElement("sections");
@@ -7,11 +8,11 @@ let Contactos = () => {
     h2.innerHTML = "Contactos";
     sectionContactos.appendChild(h2);
 
-    sectionContactos.appendChild(ItemContacto("user", "Josue Fuentes", "12345678"));
-    sectionContactos.appendChild(ItemContacto("user", "Josue Fuentes", "12345678"));
-    sectionContactos.appendChild(ItemContacto("user", "Josue Fuentes", "12345678"));
-    sectionContactos.appendChild(ItemContacto("user", "Josue Fuentes", "12345678"));
-    sectionContactos.appendChild(ItemContacto("user", "Josue Fuentes", "12345678"));
+    ContactList.forEach((contact) => {
+        sectionContactos.appendChild(ItemContacto("user",
+            contact.nombre, contact.telefono));
+    });
+
     return sectionContactos;
 }
 

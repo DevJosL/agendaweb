@@ -1,4 +1,5 @@
 import { Button } from "./components/common/button/button.js";
+import { viewContacts, viewNewContacts } from "./components/layout/nav/NavControllers.js";
 import { Contactos } from "./components/sections/contactos/Contactos.js";
 import { Formulario } from "./components/sections/formulario/Formulario.js";
 
@@ -9,12 +10,24 @@ let app = document.getElementById("app");
 let nav = document .getElementById("nav");
 
 // Agregar botones
-nav.appendChild(Button("Agenda", "agenda", "users"));
-nav.appendChild(Button("Crear contacto", "plus", "plus"));
+nav.appendChild(Button(
+    "Agenda", 
+    "agenda", 
+    "users",
+    viewContacts
+));
+nav.appendChild(Button(
+    "Crear contacto", 
+    "plus", 
+    "plus",
+    viewNewContacts
+));
 nav.appendChild(Button("ToDoList", "todolist", "agenda"));
 nav.appendChild(Button("Crear Tarea", "plus","plus"))
 
 // Section Container
 let container = document.getElementById("container");
-container.appendChild(Contactos());
-container.appendChild(Formulario());
+
+//container.innerHTML = "";
+//container.appendChild(Contactos());
+//container.appendChild(Formulario());
