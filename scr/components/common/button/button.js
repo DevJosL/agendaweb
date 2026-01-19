@@ -17,7 +17,7 @@ let Button = (title, id, img, callback) => {
     div.appendChild(divImage);
     div.appendChild(divText);
 
-    div.addEventListener("click", ()=> {callback(); console.log("Acción completada!")});
+    div.addEventListener("click", ()=> {callback(); console.log("Acción completada!");});
 
     return div;
 }

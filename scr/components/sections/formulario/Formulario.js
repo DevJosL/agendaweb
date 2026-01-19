@@ -1,4 +1,5 @@
 import { ContactList } from "../contactos/db.js";
+import { getContactcsFromStorage, saveContatcsToStorage } from "../contactos/Storage.js";
 let Formulario = () =>{
     let sectionFormulario = document.createElement("form");
     sectionFormulario.className = "formulario"
@@ -31,12 +32,15 @@ let Formulario = () =>{
         telefono: telefono.value
         };
 
-        
-        nombre.value = "";
-        telefono.value = ""
-
         console.log(contacto);
         ContactList.push(contacto);
+        saveContatcsToStorage(ContactList)
+        console.log("STORAGE: ")
+        console.log(getContactcsFromStorage());
+    
+        nombre.value = "";
+        telefono.value = "";
+
     })
 
     return sectionFormulario

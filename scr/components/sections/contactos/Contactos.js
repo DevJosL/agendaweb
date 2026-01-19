@@ -1,5 +1,6 @@
 import { ItemContacto } from "../../common/itemContacto/ItemContacto.js";
 import { ContactList } from "../contactos/db.js";
+import { getContactcsFromStorage } from "./Storage.js";
 
 let Contactos = () => {
     let sectionContactos = document.createElement("sections");
@@ -8,10 +9,16 @@ let Contactos = () => {
     h2.innerHTML = "Contactos";
     sectionContactos.appendChild(h2);
 
-    ContactList.forEach((contact) => {
+    getContactcsFromStorage().forEach((contact) =>{
+        sectionContactos.appendChild(ItemContacto("user",
+            contact.nombre, contact.telefono
+        ));
+    });
+
+    /* ContactList.forEach((contact) => {
         sectionContactos.appendChild(ItemContacto("user",
             contact.nombre, contact.telefono));
-    });
+    }); */
 
     return sectionContactos;
 }

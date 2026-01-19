@@ -1,4 +1,4 @@
-let ItemContacto = (imgC, nombre, telefono) => {
+let ItemContacto = (imgC, nombre, telefono ) => {
     let div = document.createElement("div");
     div.className = "item_seleccionado"
     
