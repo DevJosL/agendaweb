@@ -1,7 +1,9 @@
-import { getContactcsFromStorage, saveContatcsToStorage } from "./Storage.js";
+import { getContactcsFromStorage, getTODOFromStorage, saveContatcsToStorage, saveTODOToStorage } from "../storage/Storage.js";
 
 let ContactList = getContactcsFromStorage();
 saveContatcsToStorage(ContactList);
+
+
 
 /* let ContactList = [
     {nombre: "Juan", telefono: "12345678"},

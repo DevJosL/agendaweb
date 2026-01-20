@@ -13,11 +13,21 @@
 }
 
 #nav{
-    height: 100vh;
+    min-height: auto;
     border: 1px solid #000;
 }
 
 #container {
-    height: 100vh;
+    min-height: auto;
     border: 1px solid #000;
+}
+
+@media (max-width: 768px) {
+    #app {
+        grid-template-columns: 1fr;     
+    }
+
+    #nav {
+        height: auto;
+    }
 }

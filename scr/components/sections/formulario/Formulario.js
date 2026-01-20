@@ -1,5 +1,5 @@
-import { ContactList } from "../contactos/db.js";
-import { getContactcsFromStorage, saveContatcsToStorage } from "../contactos/Storage.js";
+import { ContactList } from "../../common/db/db.js";
+import { getContactcsFromStorage, saveContatcsToStorage } from "../../common/storage/Storage.js";
 let Formulario = () =>{
     let sectionFormulario = document.createElement("form");
     sectionFormulario.className = "formulario"
@@ -27,6 +27,9 @@ let Formulario = () =>{
     sectionFormulario.addEventListener("submit", (e) =>{
         e.preventDefault();
 
+        if (nombre.value == "" || telefono.value == ""){
+            alert("LLENE LOS CAMPOS")
+        }else{
         let contacto = {
         nombre: nombre.value,
         telefono: telefono.value
@@ -40,6 +43,7 @@ let Formulario = () =>{
     
         nombre.value = "";
         telefono.value = "";
+        }
 
     })
 

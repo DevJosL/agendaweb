@@ -1,0 +1,118 @@
+/* Estilo base del item seleccionado */
+.item_seleccionado {
+    font-family: monospace;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 50px; /* Imagen, nombre, descripción/prioridad, botón */
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 95%;
+    margin: 0.5rem auto; /* Centrar el item horizontalmente */
+    background-color: #fff; /* Fondo blanco */
+    border: 2px solid #ccc;
+    border-radius: 5rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    align-items: center; /* Centrar contenido verticalmente */
+}
+
+/* Efecto al pasar el mouse */
+.item_seleccionado:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Estilo para las imágenes */
+.item_seleccionado img {
+    max-width: 50px;
+    height: auto;
+    border-radius: 50%;
+    display: block;
+    justify-self: center; /* Centrar la imagen horizontalmente dentro del grid */
+}
+
+/* Título (nombre) */
+.item_seleccionado h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Descripción */
+.item_seleccionado p {
+    font-size: 0.875rem;
+    color: #555;
+    margin: 0.25rem 0;
+}
+
+.item_seleccionado .prioridad-select {
+  padding: 5px;
+  font-size: 14px;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+
+/* Prioridad (último <p>) */
+.item_seleccionado p:last-child {
+    font-size: 1rem;
+    color: #887800;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Botón eliminar */
+.item_seleccionado button {
+    background-color: rgb(240, 116, 116);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    justify-self: center; /* Centrar el botón horizontalmente */
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+/* Imagen dentro del botón */
+.item_seleccionado button img {
+    width: 30px;
+    height: auto;
+    filter: invert();
+}
+
+.prioridad-select {
+    appearance: none;
+    
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    width: 3.8rem;
+    margin-left: -1.5rem;
+    text-align: center;
+    
+    padding: 0.75rem 3rem 0.75rem 1.5rem; 
+    font-size: 1.1rem;
+    font-weight: 600;
+    
+    color: #444;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+.prioridad-select:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.prioridad-select:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
