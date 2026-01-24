@@ -1,6 +1,7 @@
+import { modal } from "../../sections/ToDoEditar/FormularioToDoEditar.js";
 import { getTODOFromStorage, removeTODOFromStorage, updateTodoPriority } from "../storage/Storage.js";
 
-let itemToDo = (imgA, nombre, descripcion, prioridad) =>{
+let itemToDo = (imgA, id ,nombre, descripcion, prioridad) =>{
     let div = document.createElement("div");
     div.className = "item_seleccionado"
     
@@ -15,6 +16,11 @@ let itemToDo = (imgA, nombre, descripcion, prioridad) =>{
 
     let selectPrioridad = document.createElement("select");
     selectPrioridad.className = "prioridad-select";
+
+    let buttonEditar = document.createElement("button");
+    buttonEditar.type = "button";
+    buttonEditar.className = "buttonEditar";
+    buttonEditar.innerHTML = "EDITAR";
     
     const opciones = ["Alta", "Media", "Baja"];
 
@@ -40,7 +46,7 @@ let itemToDo = (imgA, nombre, descripcion, prioridad) =>{
     selectPrioridad.addEventListener("change", (e) => {
         let nuevaPrio = e.target.value;
         actualizarColor(nuevaPrio);
-        updateTodoPriority(nombre, nuevaPrio);
+        updateTodoPriority(id, nuevaPrio);
     });
 
     let buttonEliminar = document.createElement("button");
@@ -57,15 +63,24 @@ let itemToDo = (imgA, nombre, descripcion, prioridad) =>{
     div.appendChild(etiquetaDescripcion);
     div.appendChild(selectPrioridad);
     div.appendChild(buttonEliminar);
+    div.appendChild(buttonEditar);
 
     buttonEliminar.addEventListener("click", (e) =>{
         e.preventDefault();
 
-         removeTODOFromStorage(nombre);
+        console.log(id);
+         removeTODOFromStorage(id);
         div.remove();
+        console.log(id + " Eliminado!");
     });
 
-    
+    let modalEditar = modal(id);
+    document.body.appendChild(modalEditar);
+
+    buttonEditar.onclick = () => {
+
+        modalEditar.style.display = "flex"
+    }
 
     return div;
 

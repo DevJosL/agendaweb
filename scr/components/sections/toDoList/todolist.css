@@ -4,9 +4,6 @@
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -19,86 +16,4 @@
     padding: 15px 0;
     font-weight: bold;
     border-bottom: 2px solid #e0e0e0;
-}
-
-/* Estilo para cada elemento de la lista de tareas */
-.todolist .item {
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background-color: #fafafa;
-    transition: background-color 0.3s ease;
-}
-
-.todolist .item:hover {
-    background-color: #f0f0f0;
-}
-
-.todolist .item .item-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.todolist .item .item-header .prioridad {
-    padding: 5px 10px;
-    font-weight: bold;
-    color: white;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    text-align: center;
-}
-
-/* Colores de prioridad */
-.todolist .item .item-header .prioridad.alta {
-    background-color: #e53e3e;  /* Rojo */
-}
-
-.todolist .item .item-header .prioridad.media {
-    background-color: #fbbf24;  /* Amarillo */
-}
-
-.todolist .item .item-header .prioridad.baja {
-    background-color: #38b2ac;  /* Verde */
-}
-
-/* Descripción de la tarea */
-.todolist .item .descripcion {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 10px;
-}
-
-/* Estilo de los botones (si los hay) */
-.todolist .item button {
-    padding: 8px 16px;
-    background-color: #4f46e5;
-    color: white;
-    font-size: 0.95rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-}
-
-.todolist .item button:hover {
-    background-color: #4338ca;
-}
-
-.todolist .item button:active {
-    background-color: #3b36b6;
-}
-
-/* Estilo general para los contenedores de cada sección de las tareas */
-.todolist .item-header .nombre {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    flex: 1;
 }

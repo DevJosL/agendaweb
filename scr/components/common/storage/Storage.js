@@ -1,48 +1,60 @@
 const LOCAL_STORAGE_KEY = "agenda_telefonoica";
 const LOCAL_STORAGE_KEYT = "todo_list";
 
-function saveContatcsToStorage(contactos){
-    localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(contactos));
+function saveContatcsToStorage(contactos) {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contactos));
 }
 
-function getContactcsFromStorage(){
+function getContactcsFromStorage() {
     return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
 }
 
-function removeContactsFromStorage(nombre) {
+function removeContactsFromStorage(id) {
     let contacts = getContactcsFromStorage();
+    contacts = contacts.filter(contactos => contactos.id !== id);
 
-    contacts = contacts.filter(todo => todo.nombre !== nombre);
-
+    console.log(contacts);
     saveContatcsToStorage(contacts);
 }
 
-function saveTODOToStorage(todolist){
-    localStorage.setItem(LOCAL_STORAGE_KEYT,JSON.stringify(todolist));
+function saveTODOToStorage(todolist) {
+    localStorage.setItem(LOCAL_STORAGE_KEYT, JSON.stringify(todolist));
 }
 
-function getTODOFromStorage(){
+function getTODOFromStorage() {
     return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYT)) || [];
 }
 
-function removeTODOFromStorage(nombre) {
+function removeTODOFromStorage(id) {
     let todos = getTODOFromStorage();
-
-    todos = todos.filter(todo => todo.nombre !== nombre);
+    todos = todos.filter(todo => todo.id !== id);
 
     saveTODOToStorage(todos);
 }
 
-function updateTodoPriority(nombre, nuevaPrioridad) {
-    let todos = getTODOFromStorage();
-
-    const index = todos.findIndex(todo => todo.nombre === nombre);
+function updateTodoPriority(id, nuevaPrioridad) {
+    let todo = getTODOFromStorage();
+    const index = todo.findIndex(todo => todo.id === id);
 
     if (index !== -1) {
-        todos[index].prioridad = nuevaPrioridad;
-        saveTODOToStorage(todos);
+        todo[index].prioridad = nuevaPrioridad;
+        saveTODOToStorage(todo);
     }
 }
 
-export{LOCAL_STORAGE_KEY, LOCAL_STORAGE_KEYT,getContactcsFromStorage, saveContatcsToStorage, saveTODOToStorage,
-     getTODOFromStorage, removeTODOFromStorage, removeContactsFromStorage, updateTodoPriority};
+function updateToDoList(id, newNombre, newDescripcion) {
+    let todoList = getTODOFromStorage();
+    const index = todoList.findIndex(todo => todo.id === id);
+
+    if (index !== -1){
+        todoList[index].nombre = newNombre;
+        todoList[index].descripcion = newDescripcion;
+        saveTODOToStorage(todoList);
+        console.log(`TODO LIST ACUTALIZADO: ${todoList[index]}`)
+    }
+}
+
+export {
+    LOCAL_STORAGE_KEY, LOCAL_STORAGE_KEYT, getContactcsFromStorage, saveContatcsToStorage, saveTODOToStorage,
+    getTODOFromStorage, removeTODOFromStorage, removeContactsFromStorage, updateTodoPriority, updateToDoList
+};

@@ -67,33 +67,36 @@ let FormularioToDo = () => {
     sectionFormulario.appendChild(radioGroup);
     sectionFormulario.appendChild(button);
 
-    sectionFormulario.addEventListener("submit", (e) =>{
+    sectionFormulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
         let prioridadSeleccionada = document.querySelector('input[name="prioridad"]:checked')?.value;
 
         if (nombre.value == "" || descripcion.value == "") {
             alert("LLENE LOS CAMPOS")
-        }else{
-        let todo = {
-        nombre: nombre.value,
-        descripcion: descripcion.value,
-        prioridad: prioridadSeleccionada
-        };
+        } else {
 
-        console.log(todo);
-        let listTodo = getTODOFromStorage();
-        listTodo.push(todo);
-        saveTODOToStorage(listTodo);
-        console.log("STORAGE: ")
-        console.log(getTODOFromStorage());
-    
-        nombre.value = "";
-        descripcion.value = "";
-        radioA.checked = true;
+            let listTodo = getTODOFromStorage();
+
+            let todo = {
+                id: listTodo.length,
+                nombre: nombre.value,
+                descripcion: descripcion.value,
+                prioridad: prioridadSeleccionada
+            };
+
+            console.log(todo);
+            listTodo.push(todo);
+            saveTODOToStorage(listTodo);
+            console.log("STORAGE: ")
+            console.log(getTODOFromStorage());
+
+            nombre.value = "";
+            descripcion.value = "";
+            radioA.checked = true;
         }
 
-        
+
 
     })
 

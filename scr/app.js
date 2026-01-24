@@ -8,29 +8,37 @@ import { todolist } from "./components/sections/toDoList/ToDoList.js";
 let app = document.getElementById("app");
 
 // Section Menu
-let nav = document .getElementById("nav");
+let nav = document.getElementById("nav");
 
 // Agregar botones
 nav.appendChild(Button(
-    "Agenda", 
-    "agenda", 
+    "Agenda",
+    "agenda",
     "users",
     viewContacts
 ));
 nav.appendChild(Button(
-    "Crear contacto", 
-    "plus", 
+    "Crear contacto",
+    "plus",
     "plus",
     viewNewContacts
 ));
-nav.appendChild(Button("ToDoList", "todolist", "agenda",viewToDoList));
-nav.appendChild(Button("Crear Tarea", "plus","plus", viewNewToDo));
+nav.appendChild(Button(
+    "ToDoList", 
+    "todolist", 
+    "agenda", 
+    viewToDoList));
+nav.appendChild(Button(
+    "Crear Tarea", 
+    "plus", 
+    "plus", 
+    viewNewToDo));
 
 // Section Container
 let container = document.getElementById("container");
 
-//container.innerHTML = "";
-//container.appendChild(Contactos());
+container.innerHTML = "";
+container.appendChild(Contactos());
 //container.appendChild(Formulario());
 
 async function tareas() {

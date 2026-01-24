@@ -10,7 +10,8 @@ let todolist = () =>{
 
     getTODOFromStorage().forEach((todo) =>{
         sectionContactos.appendChild(itemToDo("agenda",
-            todo.nombre, todo.descripcion, todo.prioridad
+            todo.id ,todo.nombre, 
+            todo.descripcion, todo.prioridad
         ));
     });
 

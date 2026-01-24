@@ -1,6 +1,6 @@
 import { removeContactsFromStorage } from "../storage/Storage.js";
 
-let ItemContacto = (imgC, nombre, telefono ) => {
+let ItemContacto = (imgC, nombre, telefono, id ) => {
     let div = document.createElement("div");
     div.className = "item_seleccionado"
     
@@ -25,8 +25,9 @@ let ItemContacto = (imgC, nombre, telefono ) => {
     buttonEliminar.addEventListener("click", (e) =>{
         e.preventDefault
 
-        removeContactsFromStorage(nombre);
+        removeContactsFromStorage(id);
         div.remove();
+        console.log(id + " Eliminado!")
     });
 
     div.appendChild(img);

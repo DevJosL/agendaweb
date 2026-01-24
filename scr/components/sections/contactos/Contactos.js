@@ -10,7 +10,7 @@ let Contactos = () => {
 
     getContactcsFromStorage().forEach((contact) =>{
         sectionContactos.appendChild(ItemContacto("user",
-            contact.nombre, contact.telefono
+            contact.nombre, contact.telefono, contact.id
         ));
     });
 

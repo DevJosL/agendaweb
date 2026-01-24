@@ -1,6 +1,6 @@
 import { ContactList } from "../../common/db/db.js";
 import { getContactcsFromStorage, saveContatcsToStorage } from "../../common/storage/Storage.js";
-let Formulario = () =>{
+let Formulario = () => {
     let sectionFormulario = document.createElement("form");
     sectionFormulario.className = "formulario"
 
@@ -24,25 +24,27 @@ let Formulario = () =>{
     sectionFormulario.appendChild(telefono);
     sectionFormulario.appendChild(button);
 
-    sectionFormulario.addEventListener("submit", (e) =>{
+    sectionFormulario.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        if (nombre.value == "" || telefono.value == ""){
+        if (nombre.value == "" || telefono.value == "") {
             alert("LLENE LOS CAMPOS")
-        }else{
-        let contacto = {
-        nombre: nombre.value,
-        telefono: telefono.value
-        };
+        } else {
 
-        console.log(contacto);
-        ContactList.push(contacto);
-        saveContatcsToStorage(ContactList)
-        console.log("STORAGE: ")
-        console.log(getContactcsFromStorage());
-    
-        nombre.value = "";
-        telefono.value = "";
+            let contacto = {
+                id: ContactList.length,
+                nombre: nombre.value,
+                telefono: telefono.value
+            };
+
+            console.log(contacto);
+            ContactList.push(contacto);
+            saveContatcsToStorage(ContactList)
+            console.log("STORAGE: ")
+            console.log(getContactcsFromStorage());
+
+            nombre.value = "";
+            telefono.value = "";
         }
 
     })
@@ -50,4 +52,4 @@ let Formulario = () =>{
     return sectionFormulario
 }
 
-export{Formulario};
+export { Formulario };
