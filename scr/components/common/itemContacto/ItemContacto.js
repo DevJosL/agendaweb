@@ -1,9 +1,10 @@
+import { modalContacto } from "../contactoModal/ContactoModal.js";
 import { removeContactsFromStorage } from "../storage/Storage.js";
 
-let ItemContacto = (imgC, nombre, telefono, id ) => {
+let ItemContacto = (imgC, nombre, telefono, id, correo, direccion, cumpleannios) => {
     let div = document.createElement("div");
     div.className = "item_seleccionado"
-    
+
     let img = document.createElement("img");
     img.src = `./assets/icons/${imgC}.svg`;
 
@@ -22,7 +23,7 @@ let ItemContacto = (imgC, nombre, telefono, id ) => {
     imgDelete.alt = "Eliminar";
     buttonEliminar.appendChild(imgDelete);
 
-    buttonEliminar.addEventListener("click", (e) =>{
+    buttonEliminar.addEventListener("click", (e) => {
         e.preventDefault
 
         removeContactsFromStorage(id);
@@ -35,7 +36,17 @@ let ItemContacto = (imgC, nombre, telefono, id ) => {
     div.appendChild(etiquetaTelefono);
     div.appendChild(buttonEliminar);
 
+    let modalContact = modalContacto(id, correo, direccion, cumpleannios, nombre, telefono, imgC);
+
+    document.body.appendChild(modalContact);
+
+    div.addEventListener("click", (e) => {
+        e.preventDefault
+
+        modalContact.style.display = "flex"
+    });
+
     return div;
 }
 
-export{ItemContacto};
+export { ItemContacto };
