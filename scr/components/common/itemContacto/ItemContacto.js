@@ -24,7 +24,8 @@ let ItemContacto = (imgC, nombre, telefono, id, correo, direccion, cumpleannios)
     buttonEliminar.appendChild(imgDelete);
 
     buttonEliminar.addEventListener("click", (e) => {
-        e.preventDefault
+        e.preventDefault();
+        e.stopPropagation();
 
         removeContactsFromStorage(id);
         div.remove();
@@ -41,9 +42,8 @@ let ItemContacto = (imgC, nombre, telefono, id, correo, direccion, cumpleannios)
     document.body.appendChild(modalContact);
 
     div.addEventListener("click", (e) => {
-        e.preventDefault
-
-        modalContact.style.display = "flex"
+        e.preventDefault();
+         modalContact.style.display = "flex";
     });
 
     return div;
