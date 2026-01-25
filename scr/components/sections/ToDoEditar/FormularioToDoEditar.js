@@ -25,6 +25,7 @@ let modal = (id) => {
   nombre.placeholder = "Nombre";
 
   let descripcion = document.createElement("textarea");
+  descripcion.className = "descripcion"
   descripcion.placeholder = "Descripción";
   descripcion.rows = 10;
   descripcion.cols = 50;
@@ -42,11 +43,16 @@ let modal = (id) => {
 
     let todoListaa = getTODOFromStorage();
 
-    console.log(id);
-    updateToDoList(id, nombre.value, descripcion.value);
-    console.log(todoListaa[id]);
-    modalFondo.style.display = "none";
-    location.reload();
+    if (nombre.value === "" || descripcion.value === "") {
+      alert("CAMPOS VACIOS");
+    } else {
+      console.log(id);
+      updateToDoList(id, nombre.value, descripcion.value);
+      console.log(todoListaa[id]);
+      modalFondo.style.display = "none";
+      location.reload();
+    }
+
   });
 
   formulario.appendChild(h2);
