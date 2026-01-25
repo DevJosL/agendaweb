@@ -8,7 +8,7 @@
     padding: 1.5rem;
     width: 95%;
     margin: 0.5rem auto; /* Centrar el item horizontalmente */
-    background-color: #fff; /* Fondo blanco */
+    background: rgba(255, 255, 255, 0.08);
     border: 2px solid #ccc;
     border-radius: 5rem;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
@@ -29,21 +29,22 @@
     height: auto;
     border-radius: 50%;
     display: block;
-    justify-self: center; /* Centrar la imagen horizontalmente dentro del grid */
+    justify-self: center;
+    filter: invert();
 }
 
 /* Título (nombre) */
 .item_seleccionado h3 {
     font-size: 1.25rem;
     margin: 0;
-    color: #333;
+    color: #ffffff;
     font-weight: bold;
 }
 
 /* Descripción */
 .item_seleccionado p {
     font-size: 0.875rem;
-    color: #555;
+    color: #adadad;
     margin: 0.25rem 0;
 }
 
@@ -68,7 +69,7 @@
 
 /* Botón eliminar */
 .item_seleccionado .buttonE {
-    background-color: rgb(240, 116, 116);
+    background-color: rgb(153, 66, 66);
     border: none;
     cursor: pointer;
     padding: 0;
@@ -80,7 +81,7 @@
 }
 
 .item_seleccionado .buttonE:hover {
-    background-color: rgb(165, 81, 81);
+    background-color: rgb(206, 84, 84);
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
@@ -95,7 +96,7 @@
 .prioridad-select {
     appearance: none;
     
-    background-color: #f9f9f9;
+    background-color: #4f5360;
     border: 2px solid #ccc;
     border-radius: 50px;
     width: 3.8rem;
@@ -106,7 +107,7 @@
     font-size: 1.1rem;
     font-weight: 600;
     
-    color: #444;
+    color: #ffffff;
     cursor: pointer;
     outline: none;
     transition: all 0.2s ease;
@@ -117,7 +118,7 @@
 }
 
 .prioridad-select:hover {
-    background-color: #fff;
+    background-color: rgb(114, 112, 112)360;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -126,7 +127,7 @@
 }
 
 .item_seleccionado .buttonEditar {
-    background-color: rgb(255, 200, 60);
+    background-color: rgb(198, 155, 45);
     border: none;
     cursor: pointer;
     padding: 0.5rem 0.75rem;
@@ -140,7 +141,7 @@
 }
 
 .item_seleccionado .buttonEditar:hover {
-    background-color: rgb(220, 170, 40);
+    background-color: rgb(253, 189, 27);
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }

@@ -8,10 +8,10 @@ div[id] {
     box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
     cursor: pointer;
 
-    background: rgb(255, 255, 255);
+    background: radial-gradient(circle at top, #354657, #192646);
     backdrop-filter: blur(14px);
 
-    color: #000000;
+    color: white;
     transition: 
         background 0.3s,
         transform 0.2s,
@@ -23,7 +23,7 @@ div[id] {
 
 /* Hover */
 div[id]:hover {
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(141, 140, 235, 0.14);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
@@ -39,7 +39,7 @@ div[id]:active {
     height: 44px;
     border-radius: 12px;
 
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: linear-gradient(135deg, #1f1f3c, #505cdf);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -9,17 +9,18 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 300px 1fr;
-    gap: 8px;
+    gap: 3px;
+    background: #514b4b;
 }
 
 #nav{
     min-height: auto;
-    border: 1px solid #000;
+    background: radial-gradient(circle at top, #1f2933, #0f172a);
 }
 
 #container {
     min-height: auto;
-    border: 1px solid #000;
+    background: radial-gradient(circle at top, #1f2933, #0f172a);
 }
 
 @media (max-width: 768px) {
